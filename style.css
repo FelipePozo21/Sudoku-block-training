@@ -58,3 +58,13 @@ main {
     height: 180px;
     background-color: var(--PREVIEW-BLOCK);
 }
+
+.select-blue {
+    background-color: var(--BLUE-BOX);
+    outline: 1px solid var(--BORDER-TABLE);
+}
+
+.select-sky-blue {
+    background-color: var(--SKY-BLUE);
+    outline: 1px solid var(--BORDER-TABLE);
+}
