@@ -1,3 +1,20 @@
+:root {
+    --BLUE-BOX: #006EDF;
+    --SKY-BLUE: #1DAEFF;
+    --FIRST-BG-TABLE: #fff;
+    --SECOND-BG-TABLE: #EBF0F7;
+    --BORDER-TABLE: #E0E6EE;
+    --PREVIEW-BLOCK: #A6C9FF;
+}
+
 * {
-    background-color: red;
+    background-color: black;
+}
+
+h1 {
+    color: var(--BLUE-BOX)
+}
+
+span {
+    color: var(--SKY-BLUE)
 }
