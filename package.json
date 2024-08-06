@@ -1,0 +1,11 @@
+{
+  "name": "sudoku",
+  "version": "0.0.1",
+  "description": "Sudoku test",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "Felipe Pozo",
+  "license": "MIT"
+}
