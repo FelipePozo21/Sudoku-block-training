@@ -28,17 +28,9 @@ main {
     height: 60vh;
     display: grid;
     place-content: center;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(9,1fr);
     outline: 4px solid var(--BORDER-TABLE);
-}
-
-.first-bg-table, .second-bg-table {
-    display: grid;
-    width: 100%;
-    height: 100%;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
 }
 
 .first-bg-table { 
