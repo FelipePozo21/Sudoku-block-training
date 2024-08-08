@@ -48,7 +48,21 @@ main {
 .preview-block {
     width: calc(30vw + 8px);
     height: 180px;
-    background-color: var(--PREVIEW-BLOCK);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    /* grid-template-rows: repeat(3,1fr); */
+    /* outline: 4px solid var(--PREVIEW-BLOCK);
+    background-color: var(--PREVIEW-BLOCK); */
+    gap: 2px;
+}
+
+.preview-grid {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 1px;
 }
 
 .select-blue {

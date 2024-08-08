@@ -1,3 +1,4 @@
+import { BLOCKS } from './squares.js'
 import { TABLE } from './table.js'
 // import { T } from './squares.js'
 
@@ -5,10 +6,14 @@ const $ = (el) => document.querySelectorAll(el)
 
 const table = $('.table')
 
+const preview = $('.preview-block')
+
 let switchBlock = 0
 
+let blocksToInsert
+
 function load () {
-  let idCols = 0
+  let idCols
   let idRows
   for (const row of TABLE) {
     if (idRows === undefined) idRows = 0
@@ -36,18 +41,11 @@ load()
 function upload ({ rows, column }) {
   TABLE[rows][column] = '1'
 
-  const test = TABLE[rows].every(item => item === '1')
-  console.log({ test, TABLE })
-  if (test) {
+  const verifyRowComplete = TABLE[rows].every(item => item === '1')
+  if (verifyRowComplete) {
     return removeRow(rows.toString())
   }
   return TABLE
-  // for (const row of TABLE) {
-  //   const someRow = row.every(el => el === '1')
-  //   if (someRow) {
-  //     removeRow(rows.toString())
-  //   }
-  // }
 }
 
 table[0].addEventListener('click', (el) => {
@@ -79,4 +77,34 @@ function removeRow (index) {
       span.classList.remove('select-sky-blue')
     }
   })
+}
+
+function squares () {
+  BLOCKS.forEach((item, index) => {
+    console.log({ item, index })
+    const div = document.createElement('div')
+    div.addEventListener('click', () => selectedBlock(item))
+    div.classList.add('preview-grid')
+    for (const squares of item) {
+      for (const square of squares) {
+        const span = document.createElement('span')
+        span.style.outline = 'none'
+        console.log(square)
+        span.classList.add('square')
+        if (square === 1) {
+          span.classList.add('select-blue')
+        }
+        div.appendChild(span)
+      }
+      preview[0].appendChild(div)
+    }
+  })
+}
+squares()
+
+function selectedBlock (square) {
+  blocksToInsert = undefined
+  blocksToInsert = square
+
+  console.log(blocksToInsert)
 }
